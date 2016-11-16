@@ -1,0 +1,27 @@
+{
+  "name": "vcgame",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "product": "webpack",
+    "dev": "webpack-dev-server --inline --hot --quiet"
+  },
+  "dependencies": {
+    "swiper": "^3.4.0",
+    "webpack-zepto": "0.0.1"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.10",
+    "copy-webpack-plugin": "^3.0.1",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "sass": "^0.5.0",
+    "sass-loader": "^4.0.2",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-merge": "^0.14.1",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
