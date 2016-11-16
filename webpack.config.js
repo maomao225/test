@@ -14,15 +14,14 @@ const plugins = require('./webpack.plugins');
   
 // Common configuration for production and dev  
 const common = merge(  
-		plugins.clean(PATHS.build), 
+		
         {  
             entry: {  
                 index: path.join(PATHS.app,'script','pages','index.js'),  
                 list: path.join(PATHS.app,'script','pages','list.js')  
             },  
             output: {  
-              
-			  path: path.join(PATHS.build,'js'),  
+             path: path.join(PATHS.build,'js'),  
                 filename: '[name].js',  
                 chunkFilename: '[chunkhash].js'  
             },  
@@ -46,7 +45,7 @@ const common = merge(
 				port:9000
 			}
         },  
-        plugins.copy(),  
+		//plugins.copy(),  
         plugins.extractCommon('common.js'),
 		plugins.sass()  
 );  
@@ -55,23 +54,34 @@ var config = null;
   
 // Detect the branch where npm is running on  
 switch(process.env.npm_lifecycle_event) {  
-    case 'product':  
+    case 'build':  
         config = merge(  
+			plugins.clean(PATHS.build),
             common,  
-            plugins.minify()  
-        );  
+            plugins.minify()
+		 );  
         break;  
+	case 'server':
+		config = merge(  
+			//plugins.clean(PATHS.build),
+			common,  
+            {  
+                devtool: 'source-map'  
+            } 
+		 );  
+        break; 
   
     case 'dev':  
     default:  
         config = merge(  
+			plugins.clean(PATHS.build),
             common,  
             // Set source map for debug  
             {  
                 devtool: 'source-map'  
             }  
         );  
-        break;  
+        break;  	
 }  
   
 module.exports = config;  

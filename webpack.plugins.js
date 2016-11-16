@@ -40,6 +40,7 @@ exports.extractCommon = function (name) {
 		]  
     };  
 }  
+
 exports.copy = function () {  
     const path = require('path');  
     const PATHS = {  

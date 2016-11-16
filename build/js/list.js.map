@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./app/script/pages/list.js"],"names":[],"mappings":";;;;AAAA,e","file":"list.js","sourcesContent":["alert('list');\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/script/pages/list.js\n// module id = 0\n// module chunks = 1"],"sourceRoot":""}
